@@ -7,7 +7,6 @@
 
 #include "bsq.h"
 
-
 int chose_little(char **tab, int i, int j)
 {
     int diag = tab[i - 1][j - 1] - 48;

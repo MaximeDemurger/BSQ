@@ -17,6 +17,7 @@
 #include <fcntl.h>
 
 int my_strlen(char const *str);
+void free_tab(char **tab);
 char *my_strcpy(char *dest, char *src);
 char *my_strdup(char *str);
 char **put_in_tab(int fd);

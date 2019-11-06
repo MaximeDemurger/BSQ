@@ -31,4 +31,5 @@ int printing_square(char **result, int i, int j, int size)
         i--;
     }
     print(result);
+    return 0;
 }

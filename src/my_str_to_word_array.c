@@ -30,9 +30,11 @@ char **malloc_line(char const *str, char separator)
     int compteur = 0;
     int i_tab = 0;
 
+    if (!new) return NULL;
     while (str[i] != '\0') {
         if (str[i] == separator && str[i + 1] != separator) {
             new[i_tab] = malloc(sizeof(char) *(compteur + 1));
+            if (!new[i_tab]) return NULL;
             i_tab++;
             compteur = 0;
         } else
@@ -40,6 +42,7 @@ char **malloc_line(char const *str, char separator)
         i++;
     }
     new[i_tab] = malloc(sizeof(char) *(compteur + 1));
+    if (!new[i_tab]) return NULL;
     return (new);
 }
 
