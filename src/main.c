@@ -59,7 +59,7 @@ int main(int ac, char **av)
     int j = 0;
     int size;
 
-    if (!fd) return 84;
+    if (!fd || ac < 2) return 84;
     tab = put_in_tab(fd);
     result = copy_tab(tab);
     if (check_error(tab) == -1)

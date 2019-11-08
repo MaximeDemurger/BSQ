@@ -10,9 +10,16 @@
 void print(char **result)
 {
     int i = 1;
+    int j = 0;
 
     while (result[i]) {
-        printf("%s\n", result[i++]);
+        j = 0;
+        while (result[i][j]) {
+            write(1, &result[i][j], 1);
+            j++;
+        }
+        write(1, "\n", 1);
+        i++;
     }
 }
 
