@@ -59,15 +59,11 @@ int main(int ac, char **av)
     int j = 0;
     int size;
 
-    if (!fd || ac < 2) return 84;
+    if (!fd || ac < 1) return 84;
     tab = put_in_tab(fd);
     result = copy_tab(tab);
-    if (check_error(tab) == -1)
-        return 84;
-    else {
-        size = bsq(tab, &i, &j);
-        printing_square(result, i, j, size);
-    }
+    size = bsq(tab, &i, &j);
+    printing_square(result, i, j, size);
     free_tab(tab);
     free_tab(result);
     return 0;

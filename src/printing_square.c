@@ -18,7 +18,6 @@ void print(char **result)
             write(1, &result[i][j], 1);
             j++;
         }
-        write(1, "\n", 1);
         i++;
     }
 }

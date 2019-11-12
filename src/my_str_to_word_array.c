@@ -25,7 +25,7 @@ int count_words(char const *str, char separator)
 char **malloc_line(char const *str, char separator)
 {
     char **new = malloc(sizeof(char *) *
-                        (count_words(str, separator) + 1));
+                        (count_words(str, separator) + 2));
     int	i = 0;
     int compteur = 0;
     int i_tab = 0;
@@ -33,7 +33,7 @@ char **malloc_line(char const *str, char separator)
     if (!new) return NULL;
     while (str[i] != '\0') {
         if (str[i] == separator && str[i + 1] != separator) {
-            new[i_tab] = malloc(sizeof(char) *(compteur + 1));
+            new[i_tab] = malloc(sizeof(char) *(compteur + 2));
             if (!new[i_tab]) return NULL;
             i_tab++;
             compteur = 0;
@@ -55,6 +55,8 @@ char **my_str_to_word_array(char const *str, char separator)
 
     while (str[index] != '\0') {
         if (str[index] == separator && str[index + 1] != separator) {
+            tab[ligne][caract] = '\n';
+            caract++;
             tab[ligne][caract] = '\0';
             ligne++;
             caract = 0;

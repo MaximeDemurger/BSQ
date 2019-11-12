@@ -25,4 +25,5 @@ char **my_str_to_word_array(char const *str, char separator);
 int bsq(char **tab, int *, int *);
 int printing_square(char **result, int i, int j, int size);
 
+
 #endif /* !BSQ_H */
