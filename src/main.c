@@ -41,7 +41,8 @@ int check_error(char **tab)
     while (tab[i]) {
         j = 0;
         while (tab[i][j]) {
-            if (tab[i][j] != '.' && tab[i][j] != 'o')
+            if (tab[i][j] != '.' && tab[i][j] != 'o' &&
+            tab[i][j] != '\n')
                 return -1;
             j++;
         }
@@ -62,8 +63,13 @@ int main(int ac, char **av)
     if (!fd || ac < 1) return 84;
     tab = put_in_tab(fd);
     result = copy_tab(tab);
-    size = bsq(tab, &i, &j);
-    printing_square(result, i, j, size);
+    if (check_error(tab) == 0) {
+        size = bsq(tab, &i, &j);
+        printing_square(result, i, j, size);
+    } else {
+        write(1, "Wrong Map\n", 10);
+        return 84;
+    }    
     free_tab(tab);
     free_tab(result);
     return 0;
