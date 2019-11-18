@@ -63,8 +63,7 @@ char **my_str_to_word_array(char const *str, char separator)
         } else {
             tab[ligne][caract] = str[index];
             caract++;
-        }
-        index++;
+        } index++;
     }
     tab[ligne][caract] = '\0';
     ligne++;
