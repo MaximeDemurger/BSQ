@@ -24,6 +24,11 @@ char **put_in_tab(int fd);
 char **my_str_to_word_array(char const *str, char separator);
 int bsq(char **tab, int *, int *);
 int printing_square(char **result, int i, int j, int size);
+int my_atoi(char const *stack);
+int my_strcmp(char const *s1, char const *s2);
+char *my_strncpy(char *dest, char *src, int n);
+char *convert_to_string(int nb);
+char *my_revstr(char *str);
 
 
 #endif /* !BSQ_H */

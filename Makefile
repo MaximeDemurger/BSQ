@@ -20,6 +20,11 @@ SRCS	= ./src/bsq.c \
 	  ./src/my_strlen.c \
 	  ./src/my_strcpy.c \
 	  ./src/free_tab.c \
+	  ./src/my_atoi.c \
+	  ./src/my_strcmp.c \
+	  ./src/my_strncpy.c \
+	  ./src/convert.c \
+	  ./src/my_revstr.c
 
 OBJS	= $(SRCS:.c=.o)
 
