@@ -81,7 +81,8 @@ int main(int ac, char **av)
     int size;
 
     if (fd == -1 || ac < 2) return 84;
-    tab = put_in_tab(fd);
+    if ((tab = put_in_tab(fd)) == NULL)
+        return 84;
     result = copy_tab(tab);
     if (check_error(tab) == 0) {
         size = bsq(tab, &i, &j);
