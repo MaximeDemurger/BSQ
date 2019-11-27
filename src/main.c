@@ -50,10 +50,9 @@ int check_error(char **tab)
 {
     int i = 1;
     int j = 0;
-    char *copy_first_line = malloc(sizeof(char) * (my_strlen(tab[0]) - 2));
+    char *copy_first = malloc(sizeof(char) * (my_strlen(tab[0]) - 2));
 
-    copy_first_line = my_strncpy(copy_first_line, tab[0],
-                                                    my_strlen(tab[0]) - 2);
+    copy_first = my_strncpy(copy_first, tab[0], my_strlen(tab[0]) - 2);
     if (str_is_num(tab[0]) == 1)
         return 84;
     while (tab[i]) {
@@ -66,7 +65,7 @@ int check_error(char **tab)
         }
         i++;
     }
-    if (my_strcmp(convert_to_string(i - 2), copy_first_line) < 0)
+    if (my_strcmp(convert_to_string(i - 2), copy_first) < 0)
         return 84;
     return 0;
 }
