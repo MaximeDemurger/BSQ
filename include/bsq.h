@@ -20,7 +20,7 @@ int my_strlen(char const *str);
 void free_tab(char **tab);
 char *my_strcpy(char *dest, char *src);
 char *my_strdup(char *str);
-char **put_in_tab(int fd);
+char **put_in_tab(int fd, char **av);
 char **my_str_to_word_array(char const *str, char separator);
 int bsq(char **tab, int *, int *);
 int printing_square(char **result, int i, int j, int size);

@@ -80,7 +80,7 @@ int main(int ac, char **av)
     int size;
 
     if (fd == -1 || ac < 2) return 84;
-    if ((tab = put_in_tab(fd)) == NULL)
+    if ((tab = put_in_tab(fd, av)) == NULL)
         return 84;
     result = copy_tab(tab);
     if (check_error(tab) == 0) {

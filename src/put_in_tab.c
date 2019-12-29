@@ -7,12 +7,17 @@
 
 #include "bsq.h"
 
-char **put_in_tab(int fd)
+char **put_in_tab(int fd, char **av)
 {
     char **tab = NULL;
-    char buffer[1000000 + 1];
+    struct stat sb;
+    char *buffer;
 
-    if (read(fd, buffer, 1000000000) == 0)
+    stat(av[1], &sb);
+    if (sb.st_size > 1000000)
+        return 0;
+    buffer = malloc(sizeof(char) * sb.st_size + 1);
+    if (read(fd, buffer, sb.st_size) == 0)
         return NULL;
     tab = my_str_to_word_array(buffer, '\n');
     return tab;
