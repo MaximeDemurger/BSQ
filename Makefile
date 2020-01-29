@@ -1,40 +1,27 @@
 ##
-## EPITECH PROJECT, 2019
-## bsq
+## EPITECH PROJECT, 2020
+## makefile
 ## File description:
-## bsq
+## makefile
 ##
 
-NAME	= bsq
+name	= program
 
 CC	= gcc
 
 RM	= rm -f
 
-SRCS	= ./src/bsq.c \
-	  ./src/main.c \
-	  ./src/my_str_to_word_array.c \
-	  ./src/put_in_tab.c \
-	  ./src/printing_square.c \
-	  ./src/my_strdup.c \
-	  ./src/my_strlen.c \
-	  ./src/my_strcpy.c \
-	  ./src/free_tab.c \
-	  ./src/my_atoi.c \
-	  ./src/my_strcmp.c \
-	  ./src/my_strncpy.c \
-	  ./src/convert.c \
-	  ./src/my_revstr.c
+SRCS	=
 
-OBJS	= $(SRCS:.c=.o)
+OBJS	= $(SCRS:.c=.o)
 
 CFLAGS = -I ./include/
 CFLAGS += -Wall -Wextra
 
-all: $(NAME)
+all:$(NAME)
 
 $(NAME): $(OBJS)
-	 $(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+	$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
 
 clean:
 	$(RM) $(OBJS)
